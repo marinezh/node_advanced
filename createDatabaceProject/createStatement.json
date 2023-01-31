@@ -1,0 +1,43 @@
+{
+  "host": "localhost",
+  "port": 3306,
+  "admin": "marina",
+  "user": "jane",
+  "userPassword": "secret",
+  "dropUser": true,
+  "debug": true,
+  "database": "employeeDB2",
+  "allowPublicKeyRetrieval": true,
+  "tables": [
+    {
+      "tableName": "employee",
+      "columns": [
+        "employeeId integer not null primary key",
+        "firstname varchar(20) not null",
+        "lastname varchar(30) not null",
+        "department varchar(30)",
+        "salary decimal(6,2)"
+      ],
+      "data": [
+        [1, "Matt", "River", "ICT", 4000],
+        [2, "Mary", "Jones", "admin", 6000],
+        [3, "Vera", "Jones", null, null]
+      ]
+    },
+
+    {
+      "tableName": "person",
+      "columns": [
+        "employeeId integer not null primary key",
+        "firstname varchar(20) not null",
+        "lastname varchar(30) not null",
+        "department varchar(30)",
+        "salary decimal(6,2)"
+      ],
+      "data": [
+        [1, "Matt", "River", "ICT", 4000],
+        [2, "Mary", "Jones", "admin", 6000]
+      ]
+    }
+  ]
+}
