@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/basicStyles.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <main>
+        <h1>
+            <%= header1 %>
+        </h1>
+        <form action="<%= action %>" method="POST">
+            <div>
+                <p>
+                    <label for="id">Employee Id: </label>
+                    <input type="text" id="id" , name="id" size="5" value="<%= id.value %>" <%= id.readonly %> />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="firstname">Firstname: </label>
+                    <input type="text" id="firstname" , name="firstname" size="15" value="<%= firstname.value %>"
+                        <%= firstname.readonly %> />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="lastname">Lastname: </label>
+                    <input type="text" id="lastname" , name="lastname" size="15" value="<%= lastname.value %>"
+                        <%= lastname.readonly %> />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="department">Department: </label>
+                    <input type="text" id="department" , name="department" size="15" value="<%= department.value %>"
+                        <%= department.readonly %> />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="salary">Salary: </label>
+                    <input type="text" id="salary" , name="salary" size="15" value="<%= salary.value %>"
+                        <%= lastname.readonly %> />
+                </p>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <a href="/"> <button>Menu</button></a>
+    </main>
+</body>
+
+</html>

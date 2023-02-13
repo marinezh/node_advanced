@@ -1,0 +1,48 @@
+main,
+form {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input[readonly] {
+    background-color: grey;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+table,
+th,
+tr {
+
+    border: solid black 1px;
+    padding: 0.5em;
+}
+
+thead {
+    background-color: yellow;
+}
+
+button {
+    font-family: sans-serif;
+    width: 13em;
+    height: 2em;
+}
+
+p.info {
+    border: solid green 2px;
+    padding: 1em;
+}
+
+h1.error {
+    color: grey;
+}
+
+.legend {
+    font-weight: bold;
+    color: blue;
+}

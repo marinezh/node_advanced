@@ -1,0 +1,37 @@
+[
+    {
+        "id": 100,
+        "firstname": "oooo",
+        "lastname": "oooo",
+        "department": "ooo",
+        "salary": 555
+    },
+    {
+        "id": 3,
+        "firstname": "ggss",
+        "lastname": "hhsss",
+        "department": "jjjssss",
+        "salary": 0
+    },
+    {
+        "id": 7,
+        "firstname": "aaa",
+        "lastname": "aaa",
+        "department": "aaa",
+        "salary": 5000
+    },
+    {
+        "id": 8,
+        "firstname": "888",
+        "lastname": "888",
+        "department": "888",
+        "salary": 888
+    },
+    {
+        "id": 9,
+        "firstname": "ssss",
+        "lastname": "",
+        "department": "",
+        "salary": 0
+    }
+]

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/basicStyles.css">
+    <title>Query result</title>
+</head>
+
+<body>
+    <main>
+        <h1>Person data</h1>
+        <p><span class="legend"> Person id:</span><%= result.id %></p>
+        <p> Name: <%= result.firstname %><%= result.lastname %></p>
+        <p> Department is: <%= result.department %></p>
+        <p> Salary: <%= result.salary %></p>
+        <a href="/"><button>Menu</button> </a>
+    </main>
+</body>
+
+</html>
