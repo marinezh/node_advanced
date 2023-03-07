@@ -21,58 +21,6 @@
     idField.addEventListener("focus", clearAll);
   }
 
-  async function send() {
-    clearMessage();
-
-    try {
-      if (searchState) {
-        // Get computer
-        const id = idField.value.trim();
-        if (id.length === 0) return;
-        const data = await fetch(`http://localhost:4000/api/computers/${id}`, {
-          mode: "cors",
-        });
-        const result = await data.json();
-        if (result) {
-          if (result.message) {
-            // This means error
-            updateMessage(result.message, result.type);
-          }
-          updateComputer(result);
-        }
-        console.log(result);
-      } else {
-        // Put computer
-        const computer = {
-          // pluses are not needed
-          id: +idField.value,
-          name: nameField.value,
-          type: typeField.value,
-          processor: processorField.value,
-          amount: +amountField.value,
-        };
-        const options = {
-          method: "PUT",
-          body: JSON.stringify(computer),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "cors",
-        };
-        const data = await fetch(
-          `http://localhost:4000/api/computers/`,
-          options
-        );
-        const status = await data.json();
-        if (status.message) {
-          updateMessage(status.message, status.type);
-        }
-      }
-    } catch (err) {
-      updateMessage(`Computer not updated. ${err.message}`, "error");
-    }
-  }
-
   function updateMessage(message, type) {
     messagearea.textContent = message;
     messagearea.setAttribute("class", type);
@@ -126,5 +74,61 @@
     amountField.value = computer.amount;
     searchState = false;
     updateFields();
+  }
+
+  async function send() {
+    try {
+      if (searchState) {
+        //get computer
+        if (idField.value.trim().length > 0) {
+          const data = await fetch(
+            `http://localhost:4000/api/computers/${idField.value}`,
+            { mode: "cors" }
+          );
+          const result = await data.json();
+          if (result) {
+            if (result.message) {
+              updateMessage(result.message, result.type);
+            } else {
+              updateComputer(result);
+            }
+          }
+        }
+      } else {
+        //put computer
+        const computer = {
+          id: idField.value,
+          name: nameField.value,
+          type: typeField.value,
+          processor: processorField.value,
+          amount: amountField.value,
+        };
+
+        const options = {
+          method: "PUT",
+          body: JSON.stringify(computer),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "cors",
+        };
+
+        const data = await fetch(
+          `http://localhost:4000/api/computers/${computer.id}`,
+          options
+        );
+
+        const status = await data.json();
+
+        if (status.message) {
+          updateMessage(status.message, status.type);
+        }
+
+        searchState = true;
+        updateFields();
+      }
+    } catch (err) {
+      updateMessage(err.message, "error");
+    }
   }
 })();
