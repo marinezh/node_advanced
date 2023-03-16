@@ -1,0 +1,18 @@
+<%- include('head') %> <% if(data.length>0{%>
+
+<table>
+  <thead>
+    <tr>
+      <% Object.keys(data[0].forEach(field=>{ %>
+
+      <th><%= field %></th>
+
+      <%})%>
+    </tr>
+  </thead>
+</table>
+
+<%} else {%>
+<h2>No items found</h2>
+
+<%}%> <%- include('tail') %>

@@ -1,0 +1,50 @@
+h1 {
+  color: green;
+}
+
+.legend {
+  color: blue;
+  font-weight: 400;
+}
+
+main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+table,
+th,
+td {
+  border: solid 1px black;
+  padding: 0.5em;
+}
+
+thead {
+  background-color: rgb(237, 237, 180);
+}
+
+button {
+  font-family: sans-serif;
+  width: 13em;
+  height: 2em;
+}
+
+.info {
+  border: solid green 2px;
+  padding: 1em;
+}
+
+.error {
+  border: dashed red 2px;
+  padding: 2em;
+}
+#messagearea {
+  margin-top: 0.5em;
+}
